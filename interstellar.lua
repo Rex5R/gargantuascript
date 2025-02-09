@@ -3,7 +3,6 @@ local Frame0 = Instance.new("Frame")
 local Frame_2 = Instance.new("Frame")
 local Frame_3 = Instance.new("Frame")
 local TextButton = Instance.new("TextButton")
-local UiDrag = Instance.new("UIDragDetector")
 
 border.Name = "border"
 border.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
@@ -27,7 +26,6 @@ TextButton.Parent = border
 TextButton.Position = UDim2.new(0.159224436, 0, 0.331797242, 0)
 TextButton.Size = UDim2.new(0.0593419522, 0, 0.0299539175, 0)
 TextButton.Text = "Change Sky"
-UiDrag.Parent = TextButton
 task.wait(1)
 
 local tweensevice = game:GetService("TweenService")
