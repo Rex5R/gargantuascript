@@ -27,6 +27,7 @@ local function sky(fov, timeofday, sunid)
 	end
 	
 	game.Lighting.Sky.SunTextureId = sunid
+	game.Lighting.Sky.CelestialBodiesShown = true
 	local DOF = game.Lighting:FindFirstChildOfClass("DepthOfFieldEffect")
 	local s = {Enabled = true, FarIntensity = 0.27, FocusDistance = 0, InFocusRadius = 50, NearIntensity = 1}
 	if DOF then
