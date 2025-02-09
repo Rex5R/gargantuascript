@@ -3,6 +3,7 @@ local Frame0 = Instance.new("Frame")
 local Frame_2 = Instance.new("Frame")
 local Frame_3 = Instance.new("Frame")
 local TextButton = Instance.new("TextButton")
+local TextButton_0 = Instance.new("TextButton")
 
 border.Name = "border"
 border.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
@@ -26,6 +27,12 @@ TextButton.Parent = border
 TextButton.Position = UDim2.new(0.159224436, 0, 0.331797242, 0)
 TextButton.Size = UDim2.new(0.0593419522, 0, 0.0299539175, 0)
 TextButton.Text = "Change Sky"
+
+TextButton_0.Parent = border
+TextButton_0.Position = UDim2.new(0.159224436, 0, 0.365, 0)
+TextButton_0.Size = UDim2.new(0.0593419522, 0, 0.0299539175, 0)
+TextButton_0.Text = "Get pulled by black hole"
+TextButton_0.TextWrapped = true
 task.wait(1)
 
 local tweensevice = game:GetService("TweenService")
@@ -33,6 +40,18 @@ local tweeninfo = TweenInfo.new(5, Enum.EasingStyle.Quint, Enum.EasingDirection.
 
 local goal = {Transparency = 1}
 local tween = tweensevice:Create(Frame_3, tweeninfo, goal):Play()
+
+TextButton_0.MouseButton1Click:Connect(function()
+	game:GetService("RunService").Heartbeat:Connect(function()
+		for _, players in pairs(game:GetService("Players"):GetPlayers()) do
+			local sunDirection = game.Lighting:GetSunDirection() * 100
+
+			local force = Instance.new("VectorForce", players.Character:WaitForChild("HumanoidRootPart"))
+			force.Attachment0 = Instance.new("Attachment", players.Character:WaitForChild("HumanoidRootPart"))
+			force.Force = sunDirection
+		end
+	end)
+end)
 
 local function sky(fov, timeofday, sunid)
 	game.Workspace.CurrentCamera.FieldOfView = fov
