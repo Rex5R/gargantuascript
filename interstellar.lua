@@ -1,20 +1,32 @@
 local border = Instance.new("ScreenGui")
-local Frame = Instance.new("Frame")
+local Frame0 = Instance.new("Frame")
 local Frame_2 = Instance.new("Frame")
+local Frame_3 = Instance.new("Frame")
 
 border.Name = "border"
 border.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 border.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 border.ScreenInsets = Enum.ScreenInsets.None
 
-Frame.Parent = border
-Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Frame.Size = UDim2.new(1702, 0, 0, 129)
+Frame0.Parent = border
+Frame0.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame0.Size = UDim2.new(1702, 0, 0, 129)
 
 Frame_2.Parent = border
 Frame_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Frame_2.Position = UDim2.new(0, 0, 0.851382494, 0)
 Frame_2.Size = UDim2.new(1702, 0, 129, 0)
+Frame_3.Parent = border
+Frame_3.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame_3.Size = UDim2.new(1, 0, 1, 0)
+wait(1)
+
+local tweensevice = game:GetService("TweenService")
+local tweeninfo = TweenInfo.new(5, Enum.EasingStyle.Quint, Enum.EasingDirection.Out)
+
+local goal = {Transparency = 1}
+
+local tween = tweensevice:Create(Frame_3, tweeninfo, goal):Play()
 
 local function sky(fov, timeofday, sunid)
 	game.Workspace.CurrentCamera.FieldOfView = fov
