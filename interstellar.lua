@@ -68,7 +68,6 @@ local function sky(fov, timeofday, sunid)
 		destroycloud:Destroy()
 	end
 	
-	local skybox = game.Lighting.Sky
 	skybox.SunTextureId = sunid
 	skybox.CelestialBodiesShown = true
 	skybox.SunAngularSize = 21
