@@ -1,2 +1,2 @@
 # gargantuascript
-This script adds a vibe from the movie "Interstellar"
+This script adds the black hole "Gargantua" from the movie interstellar
